@@ -331,6 +331,6 @@ marketing-mix-modeling/
 | models | Saved trained Machine Learning models |
 | outputs | Prediction results, graphs, and optimisation outputs |
 | dashboard | Power BI dashboard files |
-| reports | Final report and presentation |
+| reports | Final report  |
 
 ---
