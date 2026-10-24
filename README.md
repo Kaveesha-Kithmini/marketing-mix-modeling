@@ -1,4 +1,4 @@
-## 5. Project Workflow
+## Project Workflow
 
 The project follows these main steps:
 
@@ -32,7 +32,7 @@ Visualise marketing performance, model predictions, and recommended budget alloc
 
 ---
 
-# 6. Project Task Allocation
+# Project Task Allocation
 
 The project is divided into four main parts.
 
@@ -42,7 +42,7 @@ Each part has specific responsibilities, expected outputs, and deadlines.
 
 **Required Members:** 2
 
-**Deadline:** October 29, 2026
+**Deadline:** October 28, 2026
 
 ### Task 1: Data Cleaning & Preprocessing
 
@@ -92,7 +92,7 @@ Python, Pandas, NumPy, Matplotlib, Seaborn
 
 **Required Members:** 3
 
-**Deadline:** November 5, 2026
+**Deadline:** November 4, 2026
 
 ### Task 1: Adstock Analysis & Feature Engineering
 
@@ -202,7 +202,7 @@ Python, Pandas, NumPy, SciPy, Scikit-learn
 
 **Required Members:** 2
 
-**Deadline:** November 11, 2026
+**Deadline:** November 12, 2026
 
 ### Task 1: Dashboard Design & Marketing Analytics
 
@@ -252,11 +252,11 @@ Power BI, Power Query, DAX
 
 | Project Part | Members | Deadline |
 |--------------|---------|----------|
-| Part 01 - Data Preparation & EDA | 2 | October 29 |
-| Part 02 - MMM Model Development | 3 | November 5 |
-| Part 03 - ROI & Budget Optimisation | 2 | November 11 |
-| Part 04 - Power BI Dashboard | 2 | November 13 |
-| Final Integration & Testing | November  |
+| Part 01 - Data Preparation & EDA | 2 | October 28 |
+| Part 02 - MMM Model Development | 3 | November 4 |
+| Part 03 - ROI & Budget Optimisation | 2 | November 9 |
+| Part 04 - Power BI Dashboard | 2 | November 12 |
+| Final Integration & Testing | November 13 |
 | Final Submission | November 13 |
 
 **Total Members: 10**
