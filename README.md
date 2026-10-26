@@ -110,7 +110,7 @@ Python, Pandas, NumPy, Matplotlib, Seaborn
 
 **Required Members:** 3
 
-**Deadline:** November 4, 2026
+**Deadline:** November 2, 2026
 
 ### Task 1: Adstock Analysis & Feature Engineering
 
@@ -271,7 +271,7 @@ Power BI, Power Query, DAX
 | Project Part | Members | Deadline |
 |--------------|---------|----------|
 | Part 01 - Data Preparation & EDA | 2 | October 28 |
-| Part 02 - MMM Model Development | 3 | November 4 |
+| Part 02 - MMM Model Development | 3 | November 2 |
 | Part 03 - ROI & Budget Optimisation | 2 | November 9 |
 | Part 04 - Power BI Dashboard | 2 | November 12 |
 | Final Integration & Testing | November 13 |
