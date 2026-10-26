@@ -6,6 +6,24 @@ The project follows these main steps:
 
 Clean and prepare the historical marketing dataset.
 
+## Files
+- `data/processed/cleaned_data.csv`: required handoff, 36 rows × 25 columns.
+- `notebooks/01_data_eda/01_data_cleaning.ipynb`: executed notebook with validation outputs.
+- `data/processed/data_dictionary.csv`: updated dictionary for every column.
+- `reports/advertising_spend_reconciliation.csv`: original and recalculated totals for all months.
+- `data/raw/Dataset.xlsx`: unchanged source workbook, included for reproducibility.
+
+## Run
+Extract the entire ZIP. From the extracted project folder:
+```bash
+python -m pip install -r requirements.txt
+jupyter notebook notebooks/01_data_eda/01_data_cleaning.ipynb
+```
+Choose Run All. Paths resolve from the project root or notebook directory.
+
+No missing values or duplicates needed removal. The 16 total-spend differences of LKR 1–2 were reconciled using the six channel amounts; the reason for the source differences is unconfirmed. The dictionary wildcard for channel spending was expanded into named columns. No other numeric source values were changed.
+
+
 ↓
 
 **Step 2: Exploratory Data Analysis**

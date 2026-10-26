@@ -1,0 +1,26 @@
+column_name,description,units_or_format,cleaned_dtype,role,validation_rule
+month,Month start date,YYYY-MM-DD,datetime64[ns],Time key,Unique month start; continuous monthly coverage
+country,Country context,Sri Lanka,string,Metadata,Nonempty; constant context in this file
+brand_category,Illustrative brand/category,FMCG - Packaged Foods,string,Metadata,Nonempty; constant context in this file
+region_scope,Coverage level,National,string,Metadata,Nonempty; constant context in this file
+tv_spend_lkr,Monthly advertising spend on TV,LKR,int64,Channel input,Nonnegative whole LKR
+facebook_instagram_spend_lkr,Monthly advertising spend on Facebook / Instagram,LKR,int64,Channel input,Nonnegative whole LKR
+google_search_spend_lkr,Monthly advertising spend on Google Search,LKR,int64,Channel input,Nonnegative whole LKR
+youtube_spend_lkr,Monthly advertising spend on YouTube,LKR,int64,Channel input,Nonnegative whole LKR
+radio_spend_lkr,Monthly advertising spend on Radio,LKR,int64,Channel input,Nonnegative whole LKR
+outdoor_spend_lkr,Monthly advertising spend on Outdoor,LKR,int64,Channel input,Nonnegative whole LKR
+total_ad_spend_lkr,Sum of advertising spend across channels,LKR,int64,Derived total,Exact sum of all six channel spend columns
+sales_revenue_lkr,Simulated monthly sales revenue; primary MMM outcome,LKR,int64,Primary outcome,Nonnegative whole LKR
+units_sold,Simulated monthly units sold,Units,int64,Context / potential control,Nonnegative integer
+impressions,Simulated total impressions,Impressions,int64,Funnel measure; assess leakage / mediator risk,Nonnegative integer
+clicks,Simulated total clicks,Clicks,int64,Funnel measure; assess leakage / mediator risk,Nonnegative integer
+conversions,Simulated total conversions,Conversions,int64,Funnel measure; assess leakage / mediator risk,Nonnegative integer
+average_price_index,"Relative price index, not an actual price",Index; around 1.0,float64,Context / potential control,Strictly positive
+promotion_discount_pct,Average promotion/discount intensity,Percent,float64,Context / potential control,"0 to 100; percentage points, not fraction"
+competitor_pressure_index_0_100,Simulated competitive pressure,Index 0-100,float64,Context / potential control,0 to 100 inclusive
+economic_sentiment_index_0_100,Simulated consumer/economic sentiment,Index 0-100,float64,Context / potential control,0 to 100 inclusive
+lkr_usd_exchange_rate,"Illustrative exchange-rate context; synthetic, not historical truth",LKR per USD,float64,Context / potential control,Strictly positive
+inflation_proxy_index,Illustrative inflation trend proxy; synthetic,Index,float64,Context / potential control,Strictly positive
+seasonal_demand_index,Simulated seasonality including Sri Lankan festive periods,Multiplier,float64,Context / potential control,Strictly positive
+public_holiday_count,Illustrative monthly holiday count,Count,int64,Context / potential control,Nonnegative integer
+data_type,Marks every record as synthetic,SYNTHETIC,string,Metadata,SYNTHETIC for every row
