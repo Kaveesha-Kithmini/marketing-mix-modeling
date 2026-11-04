@@ -1,5 +1,20 @@
+# Virtual environments (local installations)
 .venv/
+venv/
+env/
+
+# Python-generated cache and notebook checkpoints
 __pycache__/
+*.py[cod]
 .ipynb_checkpoints/
 .pytest_cache/
+
+# Credentials or personal environment values
+.env
+.env.*
+!.env.example
+
+# Editor / OS local files
 .vscode/
+.DS_Store
+Thumbs.db
