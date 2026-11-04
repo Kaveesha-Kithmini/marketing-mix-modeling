@@ -21,6 +21,17 @@ jupyter notebook notebooks/01_data_eda/01_data_cleaning.ipynb
 ```
 Choose Run All. Paths resolve from the project root or notebook directory.
 
+## Member 2: Diminishing Returns & Model Training
+
+After generating `data/processed/mmm_features.csv` with the Member 1 feature
+engineering workflow, run
+`notebooks/02_mmm_model/02_model_training.ipynb` from the project root.
+It compares linear-adstock and Hill-saturated inputs using Multiple Linear
+Regression and Ridge on a chronological holdout. It writes the model
+comparison and saturation/response figure to `outputs/mmm/`, and saves four
+serialized model candidates to `models/`. The source implementation of the
+Hill saturation transform is in `src/saturation.py`.
+
 No missing values or duplicates needed removal. The 16 total-spend differences of LKR 1–2 were reconciled using the six channel amounts; the reason for the source differences is unconfirmed. The dictionary wildcard for channel spending was expanded into named columns. No other numeric source values were changed.
 
 
