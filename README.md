@@ -13,13 +13,65 @@ Clean and prepare the historical marketing dataset.
 - `reports/advertising_spend_reconciliation.csv`: original and recalculated totals for all months.
 - `data/raw/Dataset.xlsx`: unchanged source workbook, included for reproducibility.
 
-## Run
-Extract the entire ZIP. From the extracted project folder:
-```bash
-python -m pip install -r requirements.txt
-jupyter notebook notebooks/01_data_eda/01_data_cleaning.ipynb
+## Run the Full Project (Windows)
+
+From the project root, create the environment and install the pinned dependencies:
+
+```powershell
+py -3.13 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
-Choose Run All. Paths resolve from the project root or notebook directory.
+
+In VS Code, open each notebook below, select the `.venv` Python kernel, and run all
+cells in order. Do not delete `data/raw/Dataset.xlsx`; it is the original input.
+
+1. `notebooks/01_data_eda/01_data_cleaning.ipynb`
+2. `notebooks/01_data_eda/02_eda.ipynb`
+3. `notebooks/02_mmm_model/01_feature_engineering.ipynb`
+4. `notebooks/02_mmm_model/02_model_training.ipynb`
+5. `notebooks/02_mmm_model/03_model_evaluation.ipynb`
+6. `notebooks/03_roi_optimization/01_channel_effectiveness.ipynb`
+7. `notebooks/03_roi_optimization/02_budget_optimization.ipynb`
+
+The notebooks regenerate `data/processed/cleaned_data.csv`,
+`data/processed/data_dictionary.csv`, and `data/processed/mmm_features.csv`, as
+well as the model files under `models/` and analysis results under `outputs/`.
+Manual deletion is not required for a normal rerun.
+
+If the named kernel is not listed, choose the `.venv (Python 3.13)` interpreter.
+It can also be registered with Jupyter from the project root:
+
+```powershell
+.\.venv\Scripts\python.exe -m ipykernel install --user --name marketing-mix-modeling --display-name "Python (Marketing Mix Modeling)"
+```
+
+To verify the notebook is using the project environment, run this in a cell:
+
+```python
+import sys
+print(sys.executable)
+```
+
+The printed path must end with `.venv\Scripts\python.exe`. If a notebook reports
+`ModuleNotFoundError` for a dependency such as `openpyxl`, switch to the `.venv`
+kernel; installing packages into a different Python installation will not fix a
+kernel mismatch.
+
+### Generated Files
+
+| Notebook stage | Generated files |
+|---|---|
+| Data cleaning | `data/processed/cleaned_data.csv`, `data/processed/data_dictionary.csv`, `reports/advertising_spend_reconciliation.csv` |
+| EDA | Six charts under `outputs/eda/` |
+| Feature engineering | `data/processed/mmm_features.csv`, `outputs/mmm/adstock_analysis.png` |
+| Model training | Four candidate models under `models/`, `outputs/mmm/model_comparison.csv`, `outputs/mmm/saturation_curves.png` |
+| Model evaluation | `models/mmm_model.joblib`, `outputs/mmm/model_evaluation.csv`, `outputs/mmm/actual_vs_predicted.png`, `outputs/mmm/residual_analysis.png` |
+| Channel effectiveness | `outputs/optimization/channel_effectiveness.csv`, `outputs/optimization/channel_comparison.png`, `outputs/optimization/channel_response_curves.png` |
+| Budget optimisation | `outputs/optimization/optimized_budget.csv`, `outputs/optimization/prediction_results.csv`, `outputs/optimization/budget_scenarios.csv`, and three charts under `outputs/optimization/` |
+
+Rerunning notebooks may overwrite these generated files and save execution outputs
+inside the notebooks. It does not require deleting generated files first. The raw
+workbook under `data/raw/` is the input and must be kept.
 
 ## Member 2: Diminishing Returns & Model Training
 
@@ -206,7 +258,7 @@ Responsibilities:
 - Connect the algorithm with the trained Marketing Mix Model.
 - Apply budget constraints.
 - Generate different marketing budget allocations.
-- Identify the allocation with the highest predicted return.
+- Identify the allocation with the highest model-predicted sales revenue.
 - Compare current and optimised advertising budgets.
 - Calculate predicted sales for the recommended allocation.
 - Export optimisation results for the dashboard.
@@ -214,12 +266,17 @@ Responsibilities:
 ### Expected Deliverables
 
 - Channel effectiveness analysis
-- ROI / ROAS analysis
+- Model-based channel response analysis; ROI / ROAS where suitable profit and attribution data are available
 - Budget optimisation Python code
 - `optimized_budget.csv`
 - `prediction_results.csv`
 - Current vs optimised budget comparison
 - Marketing budget recommendations
+
+The current optimizer maximises **model-predicted sales revenue** under a fixed
+budget; it does not calculate actual ROI. Profit-margin and causal incrementality
+data are not available. Treat the results as scenario-based sales forecasts, not
+causal returns. Actual ROI optimisation requires incremental profit estimates.
 
 ### Tools
 
@@ -282,9 +339,9 @@ Power BI, Power Query, DAX
 | Project Part | Members | Deadline |
 |--------------|---------|----------|
 | Part 01 - Data Preparation & EDA | 2 | October 28 |
-| Part 02 - MMM Model Development | 3 | November 2 |
-| Part 03 - ROI & Budget Optimisation | 2 | November 9 |
-| Part 04 - Power BI Dashboard | 2 | November 12 |
+| Part 02 - MMM Model Development | 3 | November 4 |
+| Part 03 - ROI & Budget Optimisation | 2 | November 5 |
+| Part 04 - Power BI Dashboard | 2 | November 10 |
 | Final Integration & Testing | November 13 |
 | Final Submission | November 13 |
 
