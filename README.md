@@ -340,10 +340,10 @@ Power BI, Power Query, DAX
 |--------------|---------|----------|
 | Part 01 - Data Preparation & EDA | 2 | October 28 |
 | Part 02 - MMM Model Development | 3 | November 4 |
-| Part 03 - ROI & Budget Optimisation | 2 | November 5 |
+| Part 03 - ROI & Budget Optimisation | 2 | November 7 |
 | Part 04 - Power BI Dashboard | 2 | November 10 |
-| Final Integration & Testing | November 13 |
-| Final Submission | November 13 |
+| Final Integration & Testing | November 12 |
+| Final Submission | November 16 |
 
 **Total Members: 10**
 
